@@ -1,5 +1,5 @@
 <%= link_to 'New Article', new_article_path %>
-<table>
+<table class="table-fixed">
     <thead>
     <tr>
 
@@ -12,13 +12,15 @@
     </tr>
     </thead>
 
-    <tbody>
+    <tbody >
     <% @articles.each do |article|%>
     <tr>
     <td><%= article.id%></td>
     <td><%= article.name%></td>
     <td><%= article.body%></td>
     <td><%= link_to "Edit Article", edit_article_path(article)  %> </td>
+    <td><%= link_to "Show this article", article_path(article) %></td> 
+    <td><%= button_to "Delete", article_path(article), method: :delete %></td>    
     </tr>
     <% end %>
     </tbody>
