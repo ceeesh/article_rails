@@ -1,6 +1,7 @@
 <%= form_with scope: :article, url: create_article_path, local: true do |f|%>
 
 <section class="position-absolute top-50 start-50 translate-middle">
+<h1>New Article</h1>
 <p>
     <% if @article.errors.any? %>
     <ul>
@@ -14,12 +15,12 @@
 
 <p>
     <%= f.label :name %> <br/>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: 'input-group-text' %>
 </p>
 
 <p>
     <%= f.label :body %> <br/>
-    <%= f.text_field :body %>
+    <%= f.text_field :body, class: 'input-group-text' %>
 </p>
 
 <p>
